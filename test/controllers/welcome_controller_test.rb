@@ -1,7 +1,8 @@
 require "test_helper"
 
-class WelcomeControllerTest < ActionController::TestCase
-  def test_sanity
-    flunk "Need real tests"
+feature "Welcome page exists" do
+  scenario "Welcome is on the root page" do
+    visit root_path
+    page.text.must_include "WELCOME"
   end
 end

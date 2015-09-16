@@ -1,0 +1,14 @@
+<h1>Steps#index</h1>
+<p>Find me in app/views/steps/index.html.erb</p>
+
+<% @psteps.each do |step| %>
+  <li class="step" id="<%= dom_id(step) %>">
+    <h3><%= step.name %></h3>
+    <p><%= step.description %></p>
+    <div class="nav">
+      <%= link_to 'Show', step %> |
+      <%= link_to 'Edit', edit_step_path(step) %> |
+      <%= link_to 'Destroy', step, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </li>
+<% end %>
