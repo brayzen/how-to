@@ -8,7 +8,9 @@
 pspeaking1:
   name: "Introduction"
   description: "Who are you, what are you doing"
+  tutorial_id: 1
 #
 pspeaking2:
   name: "Short Story"
   description: "What is your purpose"
+  tutorial_id: 1

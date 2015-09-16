@@ -1,17 +1,10 @@
-<h1>Tutorials#index</h1>
-<p>Find me in app/views/tutorials/index.html.erb</p>
+<h1>Index of Tutorials</h1>
 
-<% @tutorials.each do |tutorial| %>
-  <li class="tutorial" id="<%= dom_id(tutorial) %>">
-    <h3><%= tutorial.title %></h3>
-    <div class="nav">
-      <%= link_to 'Show', tutorial %> |
-      <%= link_to 'Edit', edit_step_path(tutorial) %> |
-      <%= link_to 'Destroy', tutorial, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </div>
-  </li>
+<% @tutorials.each do |tut| %>
+<ul>
+  <li><h3><strong><%= tut.title %></strong></h3></li>
+  <li><%= link_to 'Show', tut %></li>
+</ul>
 <% end %>
 
-<%= link_to 'Make a new tutorial', new_tutorial_path %>
-
-<p> bottom of index page</p>
+<%= link_to 'New Tutorial', new_tutorial_path %>

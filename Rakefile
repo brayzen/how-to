@@ -11,4 +11,4 @@ end
 
 Rake::Task["test:run"].enhance ["test:features"]
 
-system 'rubocop'
+# system 'rubocop'

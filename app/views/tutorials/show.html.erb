@@ -1,0 +1,17 @@
+<h1>SHOW PAGE</h1>
+
+<p id="notice"><%= notice %></p>
+
+<h2><%= @tutorial.title %></h2>
+
+<% @tutorial.steps.each do |step| %>
+<ul>
+  <li><%= step.name %></li>
+  <li>Description: <%= step.description %></li>
+  <li><%= link_to 'Edit', edit_tutorial_step_path %>
+</ul>
+<% end %>
+
+<%= link_to 'Add a Step', new_tutorial_step_path %>
+<%= link_to 'Edit', edit_tutorial_path %>
+<%= link_to 'Back', :back %>
