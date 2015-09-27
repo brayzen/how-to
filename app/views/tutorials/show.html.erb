@@ -7,11 +7,14 @@
 <% @tutorial.steps.each do |step| %>
 <ul>
   <li><%= step.name %></li>
-  <li>Description: <%= step.description %></li>
-  <li><%= link_to 'Edit', edit_tutorial_step_path %>
+  <strong>Description:</strong>  <%= step.description %>
+  <%= link_to 'Edit', edit_tutorial_step_path(@tutorial, step) %>
+  <%= link_to 'Destroy', tutorial_step_path(@tutorial, step), method: :delete, data: { confirm: 'Are you sure?' } %>
 </ul>
 <% end %>
 
-<%= link_to 'Add a Step', new_tutorial_step_path %>
+<%= link_to 'Add a Step', new_tutorial_step_path(@tutorial) %>
 <%= link_to 'Edit', edit_tutorial_path %>
+<%= link_to 'Delete tut', tutorial_path, method: :delete, data: {confirm: 'Are you positively sure about that?'} %>
 <%= link_to 'Back', :back %>
+<%= link_to 'Index', tutorials_path %>

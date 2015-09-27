@@ -9,11 +9,23 @@
     @tutorial = Tutorial.new
   end
 
+  def show
+  end
+
+  def create
+    @tutorial = Tutorial.new(tutorial_params)
+    if @tutorial.save
+      flash[:notice] = "Tutorial has been created, now add some steps."
+      redirect_to @tutorial
+    else
+      flash.now[:error] = "Invalid data, please try again."
+      render :new
+    end
+  end
+
   def edit
   end
 
-  def show
-  end
 
   def update
     if @tutorial.update_attributes(tutorial_params)
@@ -23,20 +35,10 @@
     end
   end
 
-  def create
-    @tutorial = Tutorial.new(tutorial_params)
-    if @tutorial.save
-      flash.now[:notice] = "Tutorial has been created, now add some steps."
-      redirect_to 'new_tutorial_step'
-    else
-      flash.now[:error] = "Invalid data, please try again."
-      render :new
-    end
-  end
 
   def destroy
     @tutorial.destroy
-    render :index
+    redirect_to tutorials_path
   end
 
   private

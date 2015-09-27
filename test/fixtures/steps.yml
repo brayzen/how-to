@@ -9,8 +9,18 @@ pspeaking1:
   name: "Introduction"
   description: "Who are you, what are you doing"
   tutorial_id: 1
-#
+
 pspeaking2:
   name: "Short Story"
   description: "What is your purpose"
   tutorial_id: 1
+
+rails1:
+  name: "Introduction for RAILS1"
+  description: "Who are you, what are you doing practiceing [ ] and [ ] = "
+  tutorial_id: 2
+
+rails2:
+  name: "Short Story"
+  description: "type [ ] and = )( [ ] and on and on [ ] and equals = and _ under [ }] }{{}j"
+  tutorial_id: 2

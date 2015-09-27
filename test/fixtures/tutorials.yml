@@ -3,6 +3,8 @@
 
 pspeaking:
   title: 'Public Speaking'
+  id: 1
 
 railstut:
   title: 'How to RAILS'
+  id: 2

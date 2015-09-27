@@ -1,4 +1,5 @@
-class StepsController < ApplicationController
+  class StepsController < ApplicationController
+    before_action :set_step, only: [:show, :edit, :update, :destroy]
 
   def new
     @tutorial = Tutorial.find params[:tutorial_id]
@@ -31,10 +32,16 @@ class StepsController < ApplicationController
 
 
   def destroy
-    @step = Step.find(params[:id])
+    @step.destroy
+    redirect_to @tutorial
   end
 
   private
+
+  def set_step
+    @tutorial = Tutorial.find(params[:tutorial_id])
+    @step = @tutorial.steps.find(params[:id])
+  end
 
   def step_params
     params.require(:step).permit(:name, :description)
